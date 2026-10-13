@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cari Kode Pos Indonesia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="card">
+    <section class="intro">
+      <p class="eyebrow">KODE POS INDONESIA</p>
+      <h1><strong>Temukan</strong> Kode Pos Wilayah Anda</h1>
+      <p class="desc">
+        Pilih provinsi, kabupaten/kota, dan kecamatan untuk melihat kode pos
+        beserta informasi daerahnya hingga tingkat kelurahan/desa.
+      </p>
+
+      <div class="info">
+        <div class="info-item">
+          <span class="info-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>
+          </span>
+          <div>
+            <small>Wilayah terpilih</small>
+            <span id="infoRegion">Belum dipilih</span>
+          </div>
+        </div>
+        <div class="info-item">
+          <span class="info-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5Zm4 3v2h10V8H7Zm0 4v2h10v-2H7Zm0 4v2h6v-2H7Z"/></svg>
+          </span>
+          <div>
+            <small>Jumlah kode pos</small>
+            <span id="infoCount">-</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <form id="searchForm" novalidate>
+        <label for="province">Provinsi</label>
+        <div class="select-wrap">
+          <select id="province" required disabled><option value="">Memuat...</option></select>
+        </div>
+
+        <label for="regency">Kabupaten / Kota</label>
+        <div class="select-wrap">
+          <select id="regency" required disabled><option value="">Pilih provinsi dulu</option></select>
+        </div>
+
+        <label for="district">Kecamatan</label>
+        <div class="select-wrap">
+          <select id="district" required disabled><option value="">Pilih kabupaten/kota dulu</option></select>
+        </div>
+
+        <p id="error" class="error" role="alert" hidden></p>
+
+        <button type="submit" class="btn" id="submitBtn">
+          <span class="btn-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+          </span>
+          <span class="btn-label">Cari Kode Pos</span>
+        </button>
+      </form>
+
+      <div id="result" class="result" hidden>
+        <div class="summary" id="summary"></div>
+        <div class="codes" id="codes"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
